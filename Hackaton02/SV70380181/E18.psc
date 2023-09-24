@@ -9,5 +9,30 @@
 //Realizar un algoritmo en Pseint que dado un número de CDs a vender calcule el precio total para 
 //el cliente y la ganancia para el vendedor.
 Proceso E18
+	Definir gananciaVendedor Como Real
+    
+    Escribir "Bienvenido a la venta de CDs vírgenes"
+    Escribir "Por favor, ingrese la cantidad de CDs a vender: "
+    Leer cantidadCDs
+    
+    Si cantidadCDs >= 1 Y cantidadCDs <= 9 Entonces
+        precioPorCD <- 10
+	finsi	
+	Si cantidadCDs >= 10 Y cantidadCDs <= 99 Entonces
+		precioPorCD <- 8
+	finsi
+	Si cantidadCDs >= 100 Y cantidadCDs <= 499 Entonces
+		precioPorCD <- 7
+	Sino
+		precioPorCD <- 6
+	FinSi
+	precioTotalCliente <- cantidadCDs * precioPorCD
+	gananciaVendedor <- precioTotalCliente * 0.0825
 	
-FinProceso
+	Escribir "Cantidad de CDs vendidos: ", cantidadCDs
+	Escribir "Precio por CD: $", precioPorCD
+	Escribir "Precio total para el cliente: $", precioTotalCliente
+	Escribir "Ganancia para el vendedor: $", gananciaVendedor
+	
+FinAlgoritmo
+

@@ -4,23 +4,31 @@
 //Tipo A 10% de descuento
 //Tipo B 15% de descuento
 //Tipo C 20% de descuento
-Proceso E7
-	definir A,B,C Como caracter 
-	Escribir "Cual es tu tipo de membresia: "
-	leer membresia
+Algoritmo DescuentoTiendaDeHelado
+    Definir tipoMembresia Como Caracter
+    Definir montoCompra, descuento, totalPagar  Como Real
 	
-	si membresia = A Entonces
-		Escribir "tu descuento es de 10%"
-	sino 
-		si membresia = B Entonces 
-		Escribir " tu descuento es de 15%"
-		
-	     sino 
-		 si membresia = C Entonces 
-			 Escribir " tu descuento es de 20%"
-			 FinSi
-		finsi	
-	FinSi
-	
-	
-FinProceso
+    Escribir "Bienvenido a la tienda de helados"
+    Escribir "Por favor, ingrese el tipo de membresía (A, B o C): "
+    Leer tipoMembresia
+    Escribir "Ingrese el monto de la compra: "
+    Leer montoCompra
+    
+    Segun tipoMembresia Hacer
+        Caso "A":
+            descuento <- montoCompra * 0.10
+        Caso "B":
+            descuento <- montoCompra * 0.15
+        Caso "C":
+            descuento <- montoCompra * 0.20
+        Otro:
+            Escribir "Tipo de membresía no válido."
+    FinSegun
+    
+    totalPagar <- montoCompra - descuento
+    
+    Escribir "Monto de la compra: ", montoCompra
+    Escribir "Descuento aplicado: ", descuento
+    Escribir "Total a pagar: ", totalPagar
+    
+FinAlgoritmo
